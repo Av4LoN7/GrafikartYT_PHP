@@ -11,7 +11,7 @@ if(isset($_POST['email']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
         if(file_put_contents($file, $email . PHP_EOL, FILE_APPEND)) {
             $email = null;
             $_SESSION['success'] = "email enregistré";
-            header('location:newsletter.php', true, 303);
+            header('location:writeFichier.php', true, 303);
             exit;
         } else {
             $error = "une erreur est survenue, veuillez nous en excusez";
