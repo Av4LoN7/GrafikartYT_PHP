@@ -33,6 +33,6 @@ function recupererCompteur() {
     <?php
         creerOuAjouterVue();
     ?>
-    <p>La page à été vue : <?= recupererCompteur(); ?> de fois</p>
+    <p>La page a été vue : <?= recupererCompteur(); ?> de fois</p>
 </body>
 </html>
