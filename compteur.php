@@ -24,7 +24,7 @@ function getViewsByYear() : array
         $viewsByYear[$key] = $data["total"];
         $tempNumber += $data["total"];
     }
-    array_push($viewsByYear, $tempNumber); // total of views
+    array_push($viewsByYear, $tempNumber); // total of all views
     return $viewsByYear;
 }
 
@@ -33,7 +33,7 @@ function getViewsByMonth(int $year) : string
     $result = null;
     if(array_key_exists($year, DATA_PROCESSED)) {
         foreach (DATA_PROCESSED[$year] as $k1 => $item) {
-            if(is_array($item)) {
+            if(is_array($item)) { // skip "total" index
                 foreach ($item as $k2 => $value) {
                     $result .= " le " . $k2 . " " . ucfirst(MONTH[$k1]) . " : " . $value . " de vues <br>";
                 }
@@ -51,10 +51,10 @@ function processData() : array
 {
     $counterData = [];
     foreach (STORE_COUNTER_ARRAY as $filePath) {
-        $tempProcess = explode("-", $filePath);
+        $tempProcess = explode("-", basename($filePath)); // exclude ".txt" end file
         $year = (int)$tempProcess[1];
         $month = (int)$tempProcess[2];
-        $day = (int) substr($tempProcess[3], 0, -4); // remove ".txt" end file
+        $day = (int) $tempProcess[3];
         $value = (int) file_get_contents($filePath);
 
         if(array_key_exists($year, $counterData)) {
