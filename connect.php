@@ -18,7 +18,7 @@ if(isset($_GET['invalid_pass'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>S'autentifier</title>
+    <title>S'authentifier</title>
 </head>
 <body>
 <div class="container">
