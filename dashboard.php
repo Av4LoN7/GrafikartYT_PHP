@@ -1,5 +1,10 @@
 <?php
+session_start();
 require 'compteur.php';
+if(!isset($_SESSION["valid"]) || $_SESSION["valid"] === false) {
+    header('location: connect.php', true, 302);
+    exit;
+}
 // afficher le nombre de vue total // ok
 // afficher le nombre de vue du site par année  ok
 // lorsque l'on clique sur une année (icone) la liste des mois où le site fut visité s'affiche en dessous ok
