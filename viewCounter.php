@@ -1,6 +1,7 @@
 <?php
 // afficher le nombre de fois où la page à été vue par l'utilisateur (via un refresh par exemple)
 // le compteur est enregistré dans un fichier sur l'ordinateur
+// obsolete !!!
 
 define("COMPTEUR_LOCATION", "compteur.txt");
 

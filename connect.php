@@ -9,18 +9,8 @@ if(isset($_GET['invalid_id'])) {
 if(isset($_GET['invalid_pass'])) {
     $error = "votre mot de passe ne peux pas être vide";
 }
+require 'templates' . DIRECTORY_SEPARATOR . 'header.php';
 ?>
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>S'authentifier</title>
-</head>
-<body>
 <div class="container">
     <h1>Connection</h1>
     <form method="POST">
@@ -40,6 +30,4 @@ if(isset($_GET['invalid_pass'])) {
         </div>
     <?php endif; ?>
 </div>
-
-</body>
-</html>
+<?php require 'templates' . DIRECTORY_SEPARATOR . 'footer.php'; ?>
